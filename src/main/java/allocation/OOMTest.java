@@ -12,6 +12,7 @@ public class OOMTest {
     // -XX:MaxMetaspaceSize=64m -Xms20m -Xmx20m -Xss128k -XX:MaxDirectMemorySize=10M
     static ClassPool cp = ClassPool.getDefault();
     public static void main(String[] args)  {
+
 //        heapOOMTest();
 //        stackOverFlowTest();
 //        main(new String[]{"1"});
