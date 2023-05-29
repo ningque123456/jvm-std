@@ -25,6 +25,15 @@
             <artifactId>javassist</artifactId>
             <version>3.18.1-GA</version>
         </dependency>
+
+        <!--查看对象头工具-->
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.9</version>
+        </dependency>
+
+
     </dependencies>
     <build>
 
