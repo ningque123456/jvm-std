@@ -1,8 +1,10 @@
 package allocation;
 
-import javassist.*;
-import sun.misc.Unsafe;
 
+
+
+
+import javassist.ClassPool;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ public class OOMTest {
         for (int i = 0 ;; i++){
             try {
                 Class c = cp.makeClass("ComplexObj" + i ).toClass();
-            } catch (CannotCompileException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -46,14 +48,14 @@ public class OOMTest {
     static void stackOverFlowTest(){
         stackOverFlowTest();
     }
-    static void directMemoryOOMTest() throws IllegalAccessException {
-        Field unsafeField = Unsafe.class.getDeclaredFields()[0];
-        unsafeField.setAccessible(true);
-        Unsafe unsafe = (Unsafe) unsafeField.get(null);
-        while (true) {
-            unsafe.allocateMemory(1024*1024);
-        }
-    }
+//    static void directMemoryOOMTest() throws IllegalAccessException {
+//        Field unsafeField = Unsafe.class.getDeclaredFields()[0];
+//        unsafeField.setAccessible(true);
+//        Unsafe unsafe = (Unsafe) unsafeField.get(null);
+//        while (true) {
+//            unsafe.allocateMemory(1024*1024);
+//        }
+//    }
 
 
 
