@@ -96,8 +96,8 @@ public class MultipleThreadDemo {
 //        cf1.runAfterBoth(cf3,()->executeTask(2));
 
 
-//        CompletableFuture.runAsync(() -> executeTask(3))
-//                .runAfterBoth(CompletableFuture.runAsync(()->executeTask(1)),()->executeTask(2)).join();
+        CompletableFuture.runAsync(() -> executeTask(3))
+                .runAfterBoth(CompletableFuture.runAsync(()->executeTask(1)),()->executeTask(2)).join();
 //
 //        processOutput();
 

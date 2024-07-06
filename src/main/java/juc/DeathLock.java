@@ -1,5 +1,7 @@
 package juc;
 
+import desginpattern.Singleton;
+
 /**
  * @program: jvm-std
  * @description:
@@ -13,6 +15,7 @@ public class DeathLock {
 
     public static void main(String[] args) {
 
+        Singleton.getInstance();
         new Thread(() -> {
             synchronized (lock1){
                 System.out.println("thread A get lock 1");
